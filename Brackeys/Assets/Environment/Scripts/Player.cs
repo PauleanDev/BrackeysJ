@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     // Interaction
     [SerializeField] private LayerMask interactableObject;
     private IInteractable currentInteractable;
+    private GameObject objectKeeped;
 
     // Input variables
     [SerializeField] private InputActionAsset inputActions;
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
 
     // Player state
     private bool interacting = false;
+    private bool holdingObj = false;
+    private bool rightDir = true;
 
     private void Awake()
     {
@@ -37,6 +40,8 @@ public class Player : MonoBehaviour
             StartCoroutine("DetectObject");
             Movement();
         }
+
+        Flip();
     }
 
     private void Movement()
@@ -44,6 +49,15 @@ public class Player : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(mousePosition.ReadValue<Vector2>());
 
         navAgent.destination = mousePos;
+    }
+
+    private void Flip()
+    {
+        if (navAgent.velocity.x > 0 && !rightDir || navAgent.velocity.x < 0 && rightDir)
+        {
+            rightDir = !rightDir;
+            transform.Rotate(0, 180, 0);
+        }
     }
 
     private IEnumerator DetectObject()
@@ -63,7 +77,25 @@ public class Player : MonoBehaviour
             {
                 yield return null;
             }
+
+            interacting = true;
             currentInteractable.Interact();
         }
+    }
+
+    public void HoldObject(GameObject objectHold)
+    {
+        holdingObj = true;
+        objectKeeped = objectHold;
+    }
+
+    public GameObject DropObject()
+    {
+        holdingObj = false;
+
+        GameObject objectHold = objectKeeped;
+        objectKeeped = null;
+
+        return objectHold;
     }
 }

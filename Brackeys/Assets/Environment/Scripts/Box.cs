@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class Box : MonoBehaviour, IInteractable
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField] private GameObject ingredient;
+    [SerializeField] private Food food;
+    [SerializeField] private Transform ingredientParent;
 
     public void Interact()
     {
-        Debug.Log("interactable object finded");
+        GameObject ingredientObj = Instantiate(ingredient, transform.position, Quaternion.identity, ingredientParent);
+        HoldableFood holdableObject = ingredientObj.GetComponent<HoldableFood>();
+        
+        holdableObject.SetFood(food);
     }
 }
