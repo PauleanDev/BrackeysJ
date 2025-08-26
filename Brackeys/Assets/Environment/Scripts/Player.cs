@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     // Player state
     private bool interacting = false;
-    private bool holdingObj = false;
+    public bool holdingObj { get; private set; }
     private bool rightDir = true;
 
     private void Awake()

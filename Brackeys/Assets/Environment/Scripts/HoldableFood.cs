@@ -8,18 +8,12 @@ public class HoldableFood : MonoBehaviour
 
     [SerializeField] private Transform linkPlayerPos;
 
-    private bool holding = true;
+    private bool prepared = false;
+    private bool holding = false;
 
     private void Awake()
     {
         thisSprite = GetComponent<SpriteRenderer>();
-
-        linkPlayerPos = GameObject.FindGameObjectWithTag("ObjectPosition").transform;
-        GameObject playerPos = GameObject.FindGameObjectWithTag("Player");
-
-        Player playerScript = playerPos.GetComponent<Player>();
-
-        playerScript.HoldObject(gameObject);
     }
 
     private void Update()
@@ -28,6 +22,17 @@ public class HoldableFood : MonoBehaviour
         {
             transform.position = Vector2.Lerp(transform.position, linkPlayerPos.position, 0.2f);
         }
+    }
+
+    public void setPlayerParent()
+    {
+        linkPlayerPos = GameObject.FindGameObjectWithTag("ObjectPosition").transform;
+        GameObject playerPos = GameObject.FindGameObjectWithTag("Player");
+
+        Player playerScript = playerPos.GetComponent<Player>();
+        playerScript.HoldObject(gameObject);
+
+        holding = true;
     }
 
     public void SetFood(Food thatFood)
@@ -40,5 +45,17 @@ public class HoldableFood : MonoBehaviour
     public void HoldDrop()
     {
         holding = !holding;
+    }
+
+    public bool FoodCondition
+    {
+        get 
+        {
+            return prepared;
+        }
+        set 
+        {
+            prepared = value; 
+        }
     }
 }

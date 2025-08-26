@@ -8,9 +8,14 @@ public class Box : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        GameObject ingredientObj = Instantiate(ingredient, transform.position, Quaternion.identity, ingredientParent);
-        HoldableFood holdableObject = ingredientObj.GetComponent<HoldableFood>();
-        
-        holdableObject.SetFood(food);
+        Player playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        if (!playerScript.holdingObj)
+        {
+            GameObject ingredientObj = Instantiate(ingredient, transform.position, Quaternion.identity, ingredientParent);
+            HoldableFood holdableObject = ingredientObj.GetComponent<HoldableFood>();
+            holdableObject.SetFood(food);
+            holdableObject.setPlayerParent();
+        }
     }
 }
