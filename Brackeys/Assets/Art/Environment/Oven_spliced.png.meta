@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0efbdf3463c61b4c8e57db033b80118
+guid: 88c0914e1b161214db4f4a9e0bd3d1f9
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oven_0
+      name: Oven_Spliced_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,16 +126,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb732227424fff6a0800000000000000
-      internalID: -6413138906981451842
+      spriteID: 03785b52711206548ae592c7e7eab1be
+      internalID: -1414404087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oven_1
+      name: Oven_Spliced_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 218870fe606b1de4695afd6142617e36
-      internalID: -718555834
+      spriteID: c9fe77a99142df545b0abe9bf0dc3dac
+      internalID: -1867057797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oven_2
+      name: Oven_Spliced_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92d81f999d8e9146b69c4530033b9d7
-      internalID: 813237915
+      spriteID: b04ea819bc8610c49bbf19b58f3d1c42
+      internalID: 1126804881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oven_3
+      name: Oven_Spliced_3
       rect:
         serializedVersion: 2
         x: 32
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54ef7ee014a0dd2438a2901e161c107d
-      internalID: 1432385286
+      spriteID: 7d867403a820cd9459ebc53e95638c18
+      internalID: -1304090303
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b2b8832e5665734d915902a1f841236
+    spriteID: 1feb28f991f2d9f4f98ed13070bfd925
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Oven_0: -6413138906981451842
-      Oven_1: -718555834
-      Oven_2: 813237915
-      Oven_3: 1432385286
+      Oven_Spliced_0: -1414404087
+      Oven_Spliced_1: -1867057797
+      Oven_Spliced_2: 1126804881
+      Oven_Spliced_3: -1304090303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
