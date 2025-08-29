@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1997ce372068e2a4aa99faf521b745aa, type: 3}
+  m_Name: DefautDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBank
+  clientData:
+    genreInfo:
+    - clientName:
+      - April
+      - Coraline
+      - Ashley
+      - Emilia
+      - Kiki
+      clientAnimations: []
+      voice: []
+    - clientName:
+      - Gabriel
+      - Endrick
+      - Micheal
+      - Mohamed
+      - Paul
+      clientAnimations: []
+      voice: []
+    dialogueChances:
+    - positiveChance: 2
+      negativeChance: 8
+    - positiveChance: 5
+      negativeChance: 5
+    - positiveChance: 7
+      negativeChance: 3
+    tasteCode: 3
+  questions:
+  - question: What's your favorite food?
+    subMenu: 0
+    tasteQ: 0
+    ingredientQ: 0
+    tasteQuestions: []
+    ingredientQuestions: []
+  - question: What do you think about...
+    subMenu: 1
+    tasteQ: 1
+    ingredientQ: 0
+    tasteQuestions:
+    - question: Sweetness
+      taste:
+        sweetness: 0
+        spicy: 0
+        salty: 0
+    - question: Spicy
+      taste:
+        sweetness: 0
+        spicy: 0
+        salty: 0
+    - question: Salty
+      taste:
+        sweetness: 0
+        spicy: 0
+        salty: 0
+    ingredientQuestions:
+    - food: {fileID: 0}
+  - question: Have you ever Tried...
+    subMenu: 1
+    tasteQ: 0
+    ingredientQ: 1
+    tasteQuestions: []
+    ingredientQuestions:
+    - food: {fileID: 11400000, guid: 46ffd5678c0a3d841a3342b301317486, type: 2}
+    - food: {fileID: 11400000, guid: c6c89b58275a9f54a824648b29ba3f4b, type: 2}
+    - food: {fileID: 11400000, guid: 09d7a5b1c83703f4ebaac792a3585209, type: 2}
+  questionAnswers:
+  - answer:
+    - "I love chocolate cake ! Well, I love all cakes\u2026"
+    - bangas
+    - asas
+    - sfaga
+    - agdaw
+    tasteQ: 0
+    ingredienQ: 0
+    tasteAnswers:
+      answer: []
+      wrongTasteAnswers: []
+  - answer: []
+    tasteQ: 1
+    ingredienQ: 0
+    tasteAnswers:
+      answer:
+      - Yes, i do.
+      - I love it, like... to much !
+      - Is because that I am fat.
+      wrongTasteAnswers:
+      - I don't like to much, remember me hard days.
+      - I have problems with that
+      - no.
+  - answer: []
+    tasteQ: 0
+    ingredienQ: 1
+    tasteAnswers:
+      answer:
+      - right answer !
+      - right answer !
+      - right answer !
+      wrongTasteAnswers:
+      - wrong answer !
+      - wrong answer !
+      - wrong answer !
+  generalNegativeAnswares:
+  - 'Why are you still yapping ? I passed my order years ago ! '
+  - "I don\u2019t know, just give my cookie."
+  - "Where is my cookie ?! I\u2019ve been waiting for ages ! "
+  - I just go response you after I see my cookie !

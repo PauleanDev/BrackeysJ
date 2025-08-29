@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34a1bfd5a2c6ea40bb7e76a4b8f874a, type: 3}
   m_Name: Egg
   m_EditorClassIdentifier: Assembly-CSharp::Food
+  taste:
+    sweetness: 0
+    spicy: 0
+    salty: 0
   sprite: {fileID: 0}
