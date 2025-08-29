@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 602ac13306a12d041976648a642dace3
+guid: 5288d3d35593fbb46aac386fbf1f98af
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GenericBoxesStacked_0
+      name: Stacked_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,16 +126,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2a5f23a7b28a8190800000000000000
-      internalID: -7959405666195514838
+      spriteID: 8679724948bfe8a4aa3b7413aba4f923
+      internalID: 963865540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GenericBoxesStacked_1
+      name: Stacked_1
       rect:
         serializedVersion: 2
         x: 0
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f778dc0228a3104ba9f37eb5567ec8e
-      internalID: -1279576889
+      spriteID: 8d5e5097d9cc8fc4abd27afe308634f3
+      internalID: 2140501980
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d97461ca82431a84c980c57669bfc71d
+    spriteID: 7e9a0edc60b2ce94cbfd7aef31922c47
     internalID: 0
     vertices: []
     indices: 
@@ -172,8 +172,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GenericBoxesStacked_0: -7959405666195514838
-      GenericBoxesStacked_1: -1279576889
+      Stacked_0: 963865540
+      Stacked_1: 2140501980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

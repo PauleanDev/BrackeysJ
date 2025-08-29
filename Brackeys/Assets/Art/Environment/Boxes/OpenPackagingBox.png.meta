@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: af6bebf2f46eb5f48ac85e4c23778fe5
+guid: d5a1d328d0936074e99f47f6d98cbc90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3604398006629172422
-    second: Generic Box_0
+      213: 9125571150506850050
+    second: OpenPackagingBox_0
+  - first:
+      213: 5512359517006457866
+    second: OpenPackagingBox_1
+  - first:
+      213: -1816930096478697952
+    second: OpenPackagingBox_2
+  - first:
+      213: -3455687581922373674
+    second: OpenPackagingBox_3
+  - first:
+      213: -4487347276610414888
+    second: OpenPackagingBox_4
+  - first:
+      213: -9125248353929149909
+    second: OpenPackagingBox_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Generic Box_0
+      name: OpenPackagingBox_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +143,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c4024ed3e4650230800000000000000
-      internalID: 3604398006629172422
+      spriteID: 207738eac9a84ae70800000000000000
+      internalID: 9125571150506850050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenPackagingBox_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ce96566c5df7c40800000000000000
+      internalID: 5512359517006457866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenPackagingBox_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026cba924b7f8c6e0800000000000000
+      internalID: -1816930096478697952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenPackagingBox_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfc9c8047eea00d0800000000000000
+      internalID: -3455687581922373674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenPackagingBox_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6d1d94d6db9b1c0800000000000000
+      internalID: -4487347276610414888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenPackagingBox_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22c5d048fa9c5180800000000000000
+      internalID: -9125248353929149909
       vertices: []
       indices: 
       edges: []
@@ -138,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ee2aa13882676c746845d9580a307586
+    spriteID: 35e4f0b539503f54cb58bcfd534a59a0
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +275,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Generic Box_0: 3604398006629172422
+      OpenPackagingBox_0: 9125571150506850050
+      OpenPackagingBox_1: 5512359517006457866
+      OpenPackagingBox_2: -1816930096478697952
+      OpenPackagingBox_3: -3455687581922373674
+      OpenPackagingBox_4: -4487347276610414888
+      OpenPackagingBox_5: -9125248353929149909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
