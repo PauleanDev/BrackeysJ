@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae9dff0c30726374e981c08d1c297ce2
+guid: f134d10e89d5bc14a8ffb8eca7cf6dc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1225771226093831454
-    second: Small Table_0
+      213: -6487099558190112192
+    second: INgredientsTable_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Small Table_0
+      name: INgredientsTable_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ea38c4709f2dfee0800000000000000
-      internalID: -1225771226093831454
+      spriteID: 0422c7b625139f5a0800000000000000
+      internalID: -6487099558190112192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Table_1
+      name: INgredientsTable_1
       rect:
         serializedVersion: 2
         x: 32
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78f7bf087d37ea243b36a77f03510524
-      internalID: -2105950381
+      spriteID: 7f0b10690c510f94fac9810dc10b1c26
+      internalID: -1034390276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Table_2
+      name: INgredientsTable_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b76ab81d9231247900450136549e58
-      internalID: -43415764
+      spriteID: 5d46be747e512b84587ae055ab43d45a
+      internalID: 550085445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Small Table_3
+      name: INgredientsTable_3
       rect:
         serializedVersion: 2
         x: 32
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6eb2f049a8d364c9325a17b53f7485
-      internalID: 811348504
+      spriteID: 3610666129f31844fa11bd20bef3d194
+      internalID: 177208269
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ea6cec2b6398b0446b5c540eba2a8bc5
+    spriteID: 1751c4b59b9919d4484d82e92f12d5f2
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Small Table_0: -1225771226093831454
-      Small Table_1: -2105950381
-      Small Table_2: -43415764
-      Small Table_3: 811348504
+      INgredientsTable_0: -6487099558190112192
+      INgredientsTable_1: -1034390276
+      INgredientsTable_2: 550085445
+      INgredientsTable_3: 177208269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
