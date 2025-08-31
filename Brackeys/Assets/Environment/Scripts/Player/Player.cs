@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -8,7 +9,8 @@ public class Player : MonoBehaviour
     // Interaction
     [SerializeField] private LayerMask interactableObject;
     private IInteractable currentInteractable;
-    private GameObject objectKeeped;
+    public GameObject objectKeeped { get; private set; }
+    public Tastes currentObjectTaste { get; private set; }
 
     // Input variables
     [SerializeField] private InputActionAsset inputActions;
@@ -33,6 +35,9 @@ public class Player : MonoBehaviour
         navAgent.updateRotation = false;
         navAgent.updateUpAxis = false;
 
+        StartCoroutine("StartGame");
+
+        GameManagement.GameFinished += OnGameFinished;
         ClientInteraction.Called += OnCalled;
     }
 
@@ -46,6 +51,32 @@ public class Player : MonoBehaviour
 
         Flip();
     }
+
+    //Events
+    private void OnCalled(ClientInteraction client)
+    {
+        if (client.waiting)
+        {
+            canClick = true;
+        }
+        else
+        {
+            canClick = false;
+        }
+    }
+
+    private void OnGameFinished()
+    {
+        canClick = false;
+    }
+
+    private IEnumerator StartGame()
+    {
+        canClick = false;
+        yield return new WaitForSeconds(GameManagement.startGame);
+        canClick = true;
+    }
+
 
     private void Movement()
     {
@@ -74,8 +105,9 @@ public class Player : MonoBehaviour
         if (hitObject)
         {
             currentInteractable = hitObject.transform.gameObject.GetComponent<IInteractable>();
+            if (currentInteractable == null) yield break;
 
-            while((hitObject.transform.position - transform.position).magnitude > 2.5f)
+            while ((hitObject.transform.position - transform.position).magnitude > 2.5f)
             {
                 yield return null;
             }
@@ -90,26 +122,24 @@ public class Player : MonoBehaviour
         objectKeeped = objectHold;
     }
 
+    public void HoldObject(GameObject objectHold, Tastes objTaste)
+    {
+        holdingObj = true;
+        objectKeeped = objectHold;
+
+        currentObjectTaste = objTaste;
+    }
+
     public GameObject DropObject(bool drop)
     {
         GameObject objectHold = objectKeeped;
+
         if (drop)
         {
             holdingObj = false;
             objectKeeped = null;
+            currentObjectTaste = null;
         }
         return objectHold;
-    }
-
-    private void OnCalled(ClientInteraction client)
-    {
-        if (client.waiting)
-        {
-            canClick = true;
-        }
-        else
-        {
-            canClick = false;
-        }
     }
 }

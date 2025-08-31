@@ -4,11 +4,7 @@ public class ToolSounds : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    [SerializeField] private AudioClip[] audioStage;
-    // 2 mixing
-    // 1 slapping
-    // 0 shaping
-    [SerializeField] private AudioClip putSound;
+    [SerializeField] private AudioClip[] audios;
 
     public bool canMakeSounds { get; private set; } = false;
 
@@ -17,34 +13,25 @@ public class ToolSounds : MonoBehaviour
         audioSource = GetComponent<AudioSource>();  
     }
 
-    public void MakingSounds(bool sounds)
+    public void PlayAudio(AudioClip audio)
     {
-        canMakeSounds = sounds;
-        if (canMakeSounds) 
-        {
-            audioSource.Play();
-        }
-        else
-        {
-            audioSource.Stop();
-        }
+        audioSource.PlayOneShot(audio);
     }
 
-    public void SetSoundStage(int stage)
+    public void PlayAudio(int audioCode)
     {
-        audioSource.loop = true;
-        audioSource.clip = audioStage[stage];
-
-        if (canMakeSounds) 
-        {
-            audioSource.Play();
-        }
+        audioSource.PlayOneShot(audios[audioCode]);
     }
 
-    public void PutSound()
+    public void PlayAudio(int audioCode, bool inLoop)
     {
-        audioSource.loop = false;
-        audioSource.clip = putSound;
+        audioSource.loop = inLoop;
+        audioSource.clip = audios[audioCode];
         audioSource.Play();
+    }
+
+    public void StopAudio()
+    {
+        audioSource.Stop();
     }
 }

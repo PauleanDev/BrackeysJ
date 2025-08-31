@@ -13,12 +13,14 @@ public class ClientInteraction : MonoBehaviour, IInteractable
     public int dialogueLevel { get; private set; }
     public Tastes clientTaste { get; private set; } = new Tastes();
     public bool waiting { get; private set; } = true;
-    public bool ordered { get; private set; } = false;
     public AudioClip clientVoice { get; private set; }
     private int male;
     
-    public delegate void CalledHandler(ClientInteraction client);
+    public delegate void CalledHandler (ClientInteraction client);
     public static event CalledHandler Called;
+    
+    public delegate void AvaliatedHandler (int rating);
+    public static event AvaliatedHandler Avaliated;
 
 
     private void OnEnable()
@@ -33,13 +35,13 @@ public class ClientInteraction : MonoBehaviour, IInteractable
         switch (tasteCode)
         {
             case 0:
-                clientTaste.sweetness = 10;
+                clientTaste.sweetness = 100;
                 break;
             case 1:
-                clientTaste.spicy = 10;
+                clientTaste.spicy = 100;
                 break;
             case 2:
-                clientTaste.salty = 10;
+                clientTaste.salty = 100;
                 break;
         }
     }
@@ -66,13 +68,38 @@ public class ClientInteraction : MonoBehaviour, IInteractable
     {
         Player playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         
-        if (playerScript.holdingObj && ordered)
+        if (playerScript.holdingObj && playerScript.objectKeeped.TryGetComponent<HoldableFood>(out HoldableFood holdablefood))
         {
-            clientMove.Leave();
+            Tastes atualTaste = playerScript.currentObjectTaste;
+
+            if (holdablefood.FoodCondition == 3)
+            {
+                if (atualTaste.sweetness == 0 && atualTaste.spicy == 0 && atualTaste.salty == 0)
+                {
+                    Avaliated(2);
+                }
+                else if (atualTaste.sweetness == clientTaste.sweetness && atualTaste.spicy == clientTaste.spicy && atualTaste.salty == clientTaste.salty)
+                {
+                    Avaliated(3);
+                }
+                else
+                {
+                    Avaliated(1);
+                }
+
+                playerScript.DropObject(true);
+                Destroy(holdablefood.gameObject);
+
+                clientMove.Leave();
+            }
+            else if (holdablefood.FoodCondition == 4)
+            {
+                Avaliated(0);
+                clientMove.Leave();
+            }
         }
         else
         {
-            ordered = true;
             waiting = !waiting;
             Called(this);
         }
@@ -80,6 +107,8 @@ public class ClientInteraction : MonoBehaviour, IInteractable
 
     public string Question(Tastes taste, int questionId)
     {
+        Debug.Log(clientTaste.sweetness + " " + clientTaste.spicy + " " + clientTaste.salty);
+
         if (PositiveAnswer())
         {
             bool tasteQuestion = dialogueBank.questionAnswers[questionId].tasteQ || dialogueBank.questionAnswers[questionId].ingredienQ;

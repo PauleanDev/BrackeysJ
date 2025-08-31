@@ -4,13 +4,7 @@ using UnityEngine.AI;
 public class ClientAnimation : MonoBehaviour
 {
     private NavMeshAgent agent;
-
     private Animator animator;
-
-    private AnimationClip idle;
-    private AnimationClip walk;
-
-    private bool walking = true;
 
     private void Awake()
     {
@@ -20,15 +14,13 @@ public class ClientAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (agent.isStopped && walk)
+        if (agent.remainingDistance != 0) 
         {
-
-            animator.Play(idle.name);
+            animator.SetBool("Walking", true);
         }
-        else if (!agent.isStopped && !walk)
+        else
         {
-            animator.Play(walk.name);
+            animator.SetBool("Walking", false);
         }
     }
-
 }

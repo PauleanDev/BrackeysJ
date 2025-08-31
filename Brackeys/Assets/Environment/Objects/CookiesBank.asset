@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a2dbca3731fac438f2ee10bdca442f, type: 3}
+  m_Name: CookiesBank
+  m_EditorClassIdentifier: Assembly-CSharp::FoodBank
+  foods:
+  - {fileID: 11400000, guid: d363bafdb2b15424eb5e248ae486f92d, type: 2}
+  - {fileID: 11400000, guid: 93d10e02e54e0564b9cc6e732405ceda, type: 2}
+  - {fileID: 11400000, guid: de9e03238e26b5e4b971ec154ce7cd7a, type: 2}
+  - {fileID: 11400000, guid: 64f92b840401ce64faa2b866d9f5f32e, type: 2}

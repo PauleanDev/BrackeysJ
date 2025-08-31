@@ -1,9 +1,20 @@
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManagement : MonoBehaviour
 {
-    [Header("General")]
+    [Header("Managers")]
+
+    [Header("GameUI")]
+    [SerializeField] private GameObject startGamePanel;
+    [SerializeField] private GameObject gameUIPanel;
+    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private Text timerText;
+    [SerializeField] private Text scoreText;
+
+    [Header("Dialogue")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] DialogueBank dialogueBank;
     private Tastes currentTaste;
@@ -23,14 +34,23 @@ public class UIManagement : MonoBehaviour
     [SerializeField] private Text clientText;
     private ClientInteraction atualClient;
 
+    [Header("GameEnd")]
+    [SerializeField] private GameObject gameEndPanel;
+    [SerializeField] private Image[] stars;
+    [SerializeField] private int[] starsPontuation;
+    [SerializeField] private Sprite starEmpty;
+    [SerializeField] private Sprite starPerfect;
+
 
     private void Awake()
     {
         ClientInteraction.Called += OnCalled;
+        GameManagement.GameFinished += OnGameFinished;
 
         canSelect = new bool[dialogButtons.Length];
-    }
 
+        Invoke("AfterGameStart", GameManagement.startGame);
+    }
 
     private void OnCalled(ClientInteraction client)
     {
@@ -42,6 +62,69 @@ public class UIManagement : MonoBehaviour
 
             atualClient = client;
         }
+    }
+
+    private void AfterGameStart()
+    {
+        startGamePanel.SetActive(false);
+        gameUIPanel.SetActive(true);
+    }
+
+    private void OnGameFinished()
+    {
+        int pontuation = PlayerPrefs.GetInt("LastScore");
+
+        if (pontuation < starsPontuation[0])
+        {
+            for (int i = 0; i < stars.Length; i++)
+            {
+                stars[i].sprite = starEmpty;
+            }
+        }
+        else if (pontuation >= starsPontuation[0] && pontuation < starsPontuation[1])
+        {
+            for (int i = 0; i < stars.Length - 1; i++)
+            {
+                stars[i].sprite = starEmpty;
+            }
+            for (int i = stars.Length - 1; i < stars.Length; i++)
+            {
+                stars[i].sprite = starPerfect;
+            }
+        }
+        else if (pontuation >= starsPontuation[1] && pontuation < starsPontuation[2])
+        {
+            for (int i = 0; i < stars.Length - 2; i++)
+            {
+                stars[i].sprite = starEmpty;
+            }
+            for (int i = stars.Length - 2; i < stars.Length; i++)
+            {
+                stars[i].sprite = starPerfect;
+            }
+        }
+        else if (pontuation >= starsPontuation[2])
+        {
+            for (int i = stars.Length; i < stars.Length; i++)
+            {
+                stars[i].sprite = starPerfect;
+            }
+        }
+
+            gameUIPanel.SetActive(false);
+        dialoguePanel.SetActive(false);
+
+        gameEndPanel.SetActive(true);
+    }
+
+    public void TimerUpdate(float time)
+    {
+        timerText.text = ((int)(time / 60)).ToString("00") + ":" + (time % 60).ToString("00");
+    }
+
+    public void ScoreUpdate(int score)
+    {
+        scoreText.text = score.ToString();
     }
 
     public void SelectOption(int option)
@@ -145,5 +228,10 @@ public class UIManagement : MonoBehaviour
         {
             buttonsText[i].text = dialogueBank.questions[i].question;
         }
+    }
+
+    public void PauseUI(bool isPaused)
+    {
+        PausePanel.SetActive(!isPaused);
     }
 }

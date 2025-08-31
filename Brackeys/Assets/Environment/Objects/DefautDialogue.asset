@@ -73,9 +73,9 @@ MonoBehaviour:
     ingredientQ: 1
     tasteQuestions: []
     ingredientQuestions:
-    - food: {fileID: 11400000, guid: 46ffd5678c0a3d841a3342b301317486, type: 2}
-    - food: {fileID: 11400000, guid: c6c89b58275a9f54a824648b29ba3f4b, type: 2}
-    - food: {fileID: 11400000, guid: 09d7a5b1c83703f4ebaac792a3585209, type: 2}
+    - food: {fileID: 11400000, guid: f35846199ebff8b4597e491f8fb881d0, type: 2}
+    - food: {fileID: 11400000, guid: 9d943abb6305c7042bf0a4078f65680a, type: 2}
+    - food: {fileID: 11400000, guid: 5cd601bf115e5584bba0a000792444e3, type: 2}
   questionAnswers:
   - answer:
     - "I love chocolate cake ! Well, I love all cakes\u2026"
@@ -105,13 +105,21 @@ MonoBehaviour:
     ingredienQ: 1
     tasteAnswers:
       answer:
-      - right answer !
-      - right answer !
-      - right answer !
+      - Oh yeah, I wanna try !
+      - "Sure thing, I\u2019d love to try it."
+      - That sounds interesting !
+      - I love it !
+      - "Yeah sure ! Why not\u2026 "
       wrongTasteAnswers:
-      - wrong answer !
-      - wrong answer !
-      - wrong answer !
+      - "Sorry, I don\u2019t like."
+      - "I don\u2019t like"
+      - "in a cookie\u2026 That sounds weird."
+      - "in a cookie\u2026 That sounds weird."
+      - "in a cookie\u2026"
+      - "What \u2026?"
+      - Meh ! I hate
+      - Meh ! I hate
+      - 'What !? '
   generalNegativeAnswares:
   - 'Why are you still yapping ? I passed my order years ago ! '
   - "I don\u2019t know, just give my cookie."

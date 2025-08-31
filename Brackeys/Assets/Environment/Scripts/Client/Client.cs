@@ -7,6 +7,7 @@ public class Client : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Vector2 ExitPosition;
+    private bool rightDir = true;
 
     private void Awake()
     {
@@ -14,11 +15,25 @@ public class Client : MonoBehaviour
         ExitPosition = transform.position;
     }
 
+    private void Update()
+    {
+        Flip();
+    }
+
     public void Setup(Vector3 chairPosition)
     {
         agent.updateUpAxis = false;
         agent.updateRotation = false;
         agent.destination = chairPosition;
+    }
+
+    private void Flip()
+    {
+        if (agent.velocity.x > 0 && !rightDir || agent.velocity.x < 0 && rightDir)
+        {
+            rightDir = !rightDir;
+            transform.Rotate(0, 180, 0);
+        }
     }
 
     public void Leave()
@@ -33,6 +48,7 @@ public class Client : MonoBehaviour
         {
             yield return null;
         }
+
         Destroy(gameObject);
     }
 }

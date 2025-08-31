@@ -9,31 +9,44 @@ public class MixTable : MonoBehaviour, IInteractable
     [SerializeField] private Transform cookieParent;
     [SerializeField] private LayerMask playerLayer;
 
-    private ToolSounds sounds;
+    [SerializeField] private ToolSounds MixerSound;
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip clip;
     private HoldableFood holdableFood;
-    private List<GameObject> foodsAtTable = new List<GameObject>(); 
+    private List<HoldableFood> foodsAtTable = new List<HoldableFood>(); 
     private GameObject foodObj;
 
+    private HoldableTray tray;
+    private Vector2 trayStartPos;
+
     [SerializeField] private float prepareTime;
-    private float atualPrepareTime;
     [SerializeField] private int prepareSteps;
-    private int prepareStepsRemains = 0;
-    private int onTableMax = 5;
+    private float atualPrepareTime;
+
+    [SerializeField] private Tastes atualTaste = new Tastes();
+    private bool[] currentIngredients = new bool[3] { false, false, false};
+
+    public int prepareStepsRemains { get; private set; } = 0;
+    private int onTableMax = 4;
     private int onTableMin = 3;
 
     private bool playerNearTable = false;
-    private bool mixed = false;
-    private bool onTablePrepared = false;
+    public bool onTablePrepared { get; private set; } = false;
     private bool onTablePreparing = false;
 
-    private void Awake()
+    private Animator playerAnim;
+
+    public void Awake()
     {
-        sounds = GetComponent<ToolSounds>();
+        audioSource = GetComponent<AudioSource>();
+        tray = GetComponentInChildren<HoldableTray>();
+        trayStartPos = tray.transform.position;
     }
 
     private void FixedUpdate()
     {
-        playerNearTable = Physics2D.OverlapCircle(transform.position, 2f, playerLayer);
+        playerNearTable = Physics2D.OverlapCircle(transform.position, 1.5f, playerLayer);
     }
 
     private void Update()
@@ -46,20 +59,42 @@ public class MixTable : MonoBehaviour, IInteractable
         if (prepareStepsRemains <= 0)
         {
             Player playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            playerAnim = playerScript.GetComponent<Animator>();
+
             if (playerScript.holdingObj)
             {
                 foodObj = playerScript.DropObject(false);
                 holdableFood = foodObj.GetComponent<HoldableFood>();
 
-                if (foodsAtTable.Count <= onTableMax && !onTablePrepared && holdableFood.FoodCondition == 0)
+                if (playerScript.objectKeeped.TryGetComponent<HoldableTray>(out HoldableTray holdableTray))
                 {
                     playerScript.DropObject(true);
-                    foodObj.transform.position = new Vector2(transform.position.x + Random.Range(-0.05f,0.05f), transform.position.y + Random.Range(-0.5f, 0.5f));
+                    holdableTray.HoldDrop();
+                    holdableTray.transform.position = trayStartPos;
+                    foodObj.transform.SetParent(transform);
+                }
+                else if (foodsAtTable.Count <= onTableMax && !onTablePrepared && holdableFood.FoodCondition == 0)
+                {
+                    audioSource.PlayOneShot(clip);
+                    if (holdableFood.food.isIngredient) 
+                    {
+                        int ingredient = holdableFood.food.ingredientID;
 
-                    holdableFood.HoldDrop();
-                    foodsAtTable.Add(foodObj);
+                        if (!currentIngredients[holdableFood.food.ingredientID])
+                        {
+                            currentIngredients[ingredient] = true;
 
-                    sounds.PutSound();
+                            AddTable(playerScript);
+                        }
+                    }
+                    else
+                    {
+                        atualTaste.sweetness += holdableFood.taste.sweetness;
+                        atualTaste.spicy += holdableFood.taste.spicy;
+                        atualTaste.salty += holdableFood.taste.salty;
+
+                        AddTable(playerScript);
+                    }
                 }
             }
             else 
@@ -69,21 +104,44 @@ public class MixTable : MonoBehaviour, IInteractable
                     onTablePrepared = false;
 
                     holdableFood.FoodCondition = 1;
+                    currentIngredients = new bool[3] { false, false, false };
+
                     holdableFood.setPlayerParent();
-                    playerScript.HoldObject(foodObj);
+
+                    foodObj = tray.gameObject;
+
+                    playerScript.HoldObject(foodObj, atualTaste);
+                    playerAnim.SetBool("Working", false);
+
+                    atualTaste = new Tastes();
                     foodObj = null;
-                    mixed = false;
                 }
                 else if (foodsAtTable.Count >= onTableMin && !onTablePreparing) 
                 {
-                    sounds.SetSoundStage(2);
                     onTablePreparing = true;
                     atualPrepareTime = prepareTime;
                     prepareStepsRemains = prepareSteps;
+
+                    for (int i = 0; i < foodsAtTable.Count; i++)
+                    {
+                        Destroy(foodsAtTable[i].gameObject);
+                    }
+
+                    MixerSound.PlayAudio(0, true);
                 } 
             }
         }
     }
+
+    private void AddTable(Player playerScript)
+    {
+        playerScript.DropObject(true);
+        foodObj.transform.position = new Vector2(transform.position.x + Random.Range(-0.05f, 0.05f), transform.position.y + 0.25f + Random.Range(-0.05f, 0.05f));
+
+        foodsAtTable.Add(holdableFood);
+        holdableFood.HoldDrop();
+    }
+
 
     private void DoughPrepare()
     {
@@ -91,51 +149,43 @@ public class MixTable : MonoBehaviour, IInteractable
         {
             if (playerNearTable)
             {
-                if (!sounds.canMakeSounds)
+                if (playerAnim != null)
                 {
-                    sounds.MakingSounds(true);
+                    playerAnim.SetBool("Working", true);
                 }
-
+                    
                 atualPrepareTime -= Time.deltaTime;
             }
-            else if (sounds.canMakeSounds)
+            else
             {
-                sounds.MakingSounds(false);
+                if (playerAnim != null)
+                {
+                    playerAnim.SetBool("Working", false);
+                }
             }
 
             if (atualPrepareTime <= 0)
             {
+                if (prepareStepsRemains == 3)
+                {
+                    MixerSound.StopAudio();
+                }
+
                 prepareStepsRemains--;
 
                 if (prepareStepsRemains <= 0)
                 {
+                    tray.KeepTaste(atualTaste);
+                    holdableFood = tray;
+
                     onTablePreparing = false;
                     onTablePrepared = true;
                     foodsAtTable.Clear();
-
-                    sounds.MakingSounds(false);
-                }
-                else
-                {
-                    foodObj.transform.localScale = Vector3.right * 1.25f + Vector3.up * 1.25f;
-                    sounds.SetSoundStage(prepareStepsRemains - 1);
                 }
 
                     
                 atualPrepareTime = prepareTime;
             }
-        }
-
-        if (prepareStepsRemains == prepareSteps - 1 && !mixed)
-        {
-            mixed = true;
-            for (int i = 0; i < foodsAtTable.Count; i++)
-            {
-                Destroy(foodsAtTable[i]);
-            }
-
-            foodObj = Instantiate(cookie, transform.position, Quaternion.identity, cookieParent);
-            holdableFood = foodObj.GetComponent<HoldableFood>();
         }
     }
 }

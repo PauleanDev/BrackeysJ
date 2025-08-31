@@ -10,6 +10,12 @@ public class ClientSpawn : MonoBehaviour
 
     [SerializeField] private bool perTime = false;
 
+
+    private void Awake()
+    {
+        ClientInteraction.Avaliated += OnAvaliated;
+    }
+
     private void Start()
     {
         atualSpawnTime = spawnTime;
@@ -48,12 +54,17 @@ public class ClientSpawn : MonoBehaviour
         }
     }
 
-    private void Spawn()
+    public void Spawn()
     {
         GameObject clientObj = Instantiate(clientPrefab, transform.position, Quaternion.identity);
 
         Client client = clientObj.GetComponent<Client>();
 
         client.Setup(chairs[Random.Range(0, chairs.Length - 1)].transform.position);
+    }
+
+    public void OnAvaliated(int rating)
+    {
+        Spawn();
     }
 }

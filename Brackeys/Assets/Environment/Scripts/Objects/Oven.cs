@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Oven : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject cookie;
+    private OvenAnim ovenAnim;
+
+    [SerializeField] private FoodBank cookies;
     [SerializeField] private Transform cookieParent;
     [SerializeField] private LayerMask playerLayer;
-    private HoldableFood holdableFood;
+    public int foodCondition { get; private set; } = 1;
     private GameObject foodObj;
+    private Food atualCookie;
 
     [SerializeField] private float prepareTime;
     [SerializeField] private float burnTime;
 
-    private bool onOven = false;
-    private bool onOvenPrepared = false;
+    private Tastes atualTaste;
 
+    public bool onOven { get; private set; } = false;
+    public bool onOvenPrepared { get; private set; } = false;
+
+    private void Awake()
+    {
+        ovenAnim = GetComponent<OvenAnim>();
+    }
     public void Interact()
     {
         Player playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -23,46 +32,75 @@ public class Oven : MonoBehaviour, IInteractable
         if (playerScript.holdingObj)
         {
             foodObj = playerScript.DropObject(false);
-            holdableFood = foodObj.GetComponent<HoldableFood>();
-
-            if (holdableFood.FoodCondition == 1 && !onOven)
+            if (playerScript.objectKeeped.TryGetComponent<HoldableTray>(out HoldableTray holdableTray))
             {
-                onOven = true;
-                StartCoroutine("CookiePrepare");
+                atualTaste = playerScript.currentObjectTaste;
+                if (!onOven)
+                {
+                    for (int i = 0; i < cookies.foods.Length; i++)
+                    {
+                        if (atualTaste.sweetness == cookies.foods[i].taste.sweetness && atualTaste.spicy == cookies.foods[i].taste.spicy && atualTaste.salty == cookies.foods[i].taste.salty)
+                        {
+                            atualCookie = cookies.foods[i];
+                            break;
+                        }
+                    }
 
-                playerScript.DropObject(true);
-                foodObj.transform.position = transform.position;
+                    if (ovenAnim != null)
+                    {
+                        ovenAnim.PlayOpenAnim(onOven);
+                    }
 
-                holdableFood.HoldDrop();
+                    onOven = true;
+
+                    StartCoroutine("CookiePrepare");
+                    holdableTray.ClearTray();
+                }
+            }
+            else
+            {
+                HoldableFood holdable = foodObj.GetComponent<HoldableFood>();
+                if (holdable.FoodCondition == 2 && onOvenPrepared)
+                {
+                    holdable.SetFood(atualCookie);
+                    holdable.FoodCondition = foodCondition;
+
+                    playerScript.HoldObject(foodObj, atualTaste);
+
+                    if (ovenAnim != null)
+                    {
+                        ovenAnim.PlayOpenAnim(onOven);
+                    }
+
+                    onOvenPrepared = false;
+                    onOven = false;
+
+                    ovenAnim.StopAudio();
+
+                    atualTaste = null;
+                    foodObj = null;
+                    StopAllCoroutines();
+                }
             }
         }
-        else
-        {
-            if (onOvenPrepared)
-            {
-                onOvenPrepared = false;
-                onOven = false;
-
-                holdableFood.FoodCondition = 2;
-                holdableFood.setPlayerParent();
-                playerScript.HoldObject(foodObj);
-                foodObj = null;
-            }
-        }
-
     }
 
     private IEnumerator CookiePrepare()
     {
+        foodCondition = 1;
         onOvenPrepared = false;
 
         yield return new WaitForSeconds(prepareTime);
 
-        holdableFood.FoodCondition = 2;
+        foodCondition = 3;
         onOvenPrepared = true;
+
+        ovenAnim.PlayDoneAnim(false);
 
         yield return new WaitForSeconds(burnTime);
 
-        holdableFood.FoodCondition = 3;
+        foodCondition = 4;
+
+        ovenAnim.PlayDoneAnim(true);
     }
 }

@@ -7,8 +7,15 @@ public class TrashBin : MonoBehaviour, IInteractable
     public void Interact()
     {
         Player playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        foodObj = playerScript.DropObject(true);
 
-        Destroy(foodObj);
+        if (playerScript.objectKeeped.TryGetComponent<HoldableTray>(out HoldableTray tray))
+        {
+            tray.ClearTray();
+        }
+        else
+        {
+            foodObj = playerScript.DropObject(true);
+            Destroy(foodObj);
+        }
     }
 }

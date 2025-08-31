@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class HoldableFood : MonoBehaviour
 {
-    private SpriteRenderer thisSprite;
+    protected SpriteRenderer thisSprite;
 
-    private Food food;
+    public Food food { get; private set; }
+    public Tastes taste { get; private set; } = new Tastes();  
 
-    [SerializeField] private Transform linkPlayerPos;
+    private Transform linkPlayerPos;
 
-    private int foodStage = 0;
+    protected int foodStage = 0;
     private bool holding = false;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         thisSprite = GetComponent<SpriteRenderer>();
     }
@@ -35,11 +36,11 @@ public class HoldableFood : MonoBehaviour
         holding = true;
     }
 
-    public void SetFood(Food thatFood)
+    public virtual void SetFood(Food thatFood)
     {
+        thisSprite.sprite = thatFood.sprite;
+        taste = thatFood.taste;
         food = thatFood;
-
-        thisSprite.sprite = food.sprite;
     }
 
     public void HoldDrop()

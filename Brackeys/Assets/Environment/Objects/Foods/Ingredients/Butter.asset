@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34a1bfd5a2c6ea40bb7e76a4b8f874a, type: 3}
+  m_Name: Butter
+  m_EditorClassIdentifier: Assembly-CSharp::Food
+  isIngredient: 1
+  ingredientID: 0
+  taste:
+    sweetness: 0
+    spicy: 0
+    salty: 0
+  sprite: {fileID: -1223283234601002675, guid: b6ea479e06c6dc24894766fdb3d39bf0, type: 3}
