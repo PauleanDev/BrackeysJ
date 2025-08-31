@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 4e0aab775cf85304fae261bb61ec6378
+guid: bf663984bf8f7ec4ba59a7860b488d3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2129379317701697316
-    second: Main page_Title_0
+      213: -6018573889756183041
+    second: TitleWiggle_0
   - first:
-      213: -946644089759570258
-    second: Main page_Title_1
+      213: -8654134855175051332
+    second: TitleWiggle_1
+  - first:
+      213: 6369397960999495593
+    second: TitleWiggle_2
+  - first:
+      213: -659980820445367190
+    second: TitleWiggle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,45 +122,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main page_Title_0
+      name: MainTitle_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 94
-        width: 202
-        height: 79
+        x: 0
+        y: 0
+        width: 320
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cd0a350eacce272e0800000000000000
-      internalID: -2129379317701697316
+      spriteID: 0f2e7c207eac9bb48ac72c7cd95d9c59
+      internalID: -339561734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main page_Title_1
+      name: MainTitle_1
       rect:
         serializedVersion: 2
-        x: 201
-        y: 137
-        width: 36
-        height: 38
+        x: 320
+        y: 0
+        width: 320
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ea668254738dcd2f0800000000000000
-      internalID: -946644089759570258
+      spriteID: 5e67a8a12be988f4986a6dc68bc4e9c4
+      internalID: 363511774
       vertices: []
       indices: 
       edges: []
@@ -163,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eb276067e0297414da72d83d840c40d7
     internalID: 0
     vertices: []
     indices: 
@@ -171,10 +177,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":320.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Main page_Title_0: -2129379317701697316
-      Main page_Title_1: -946644089759570258
+      MainTitle_0: -339561734
+      MainTitle_1: 363511774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
