@@ -117,7 +117,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -139,50 +139,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36775ad9a57f3f64fa491e96b3907c7f
-      internalID: 1530261029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CounterDoor_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcae03924526dd64bb12c2901c78a108
-      internalID: -1074050565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CounterDoor_3
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 96
         width: 32
         height: 32
@@ -194,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f15df089508b9b43b529a3a010f0564
-      internalID: -327609515
+      spriteID: 22610b69c1d60f540a79cadc788e5d6a
+      internalID: -265130255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CounterDoor_4
+      name: CounterDoor_2
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b72418c0e1e72e41a8f0fb4a2a7c84d
-      internalID: -199160305
+      spriteID: 535590627dbd9e4459970d5b2aaab577
+      internalID: -603965731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CounterDoor_5
+      name: CounterDoor_3
       rect:
         serializedVersion: 2
         x: 0
@@ -238,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b63d9ddac4617654ba7c34c36c8e9da5
-      internalID: 1971135674
+      spriteID: d137623e8e367d246a7f4010a2d5722d
+      internalID: 1701933845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CounterDoor_6
+      name: CounterDoor_4
       rect:
         serializedVersion: 2
         x: 0
@@ -260,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bc06ac4d50783e43be917f5f52efbce
-      internalID: -1082303696
+      spriteID: 96ca04238e4b3934aad2f94212906bee
+      internalID: 1321423158
       vertices: []
       indices: 
       edges: []
@@ -270,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 071259db7b2ae6e4a8d4230329d3a41d
+    spriteID: eaee8bd4920065d4dba97a6d2a093d1d
     internalID: 0
     vertices: []
     indices: 
@@ -283,12 +239,10 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       CounterDoor_0: 4032121562596432048
-      CounterDoor_1: 1530261029
-      CounterDoor_2: -1074050565
-      CounterDoor_3: -327609515
-      CounterDoor_4: -199160305
-      CounterDoor_5: 1971135674
-      CounterDoor_6: -1082303696
+      CounterDoor_1: -265130255
+      CounterDoor_2: -603965731
+      CounterDoor_3: 1701933845
+      CounterDoor_4: 1321423158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
