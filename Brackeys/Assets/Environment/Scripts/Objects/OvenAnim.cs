@@ -9,9 +9,7 @@ public class OvenAnim : MonoBehaviour
 
     [SerializeField] private AnimationClip openOven;
     [SerializeField] private AnimationClip closeOven;
-
     [SerializeField] private AnimationClip doneOven;
-    [SerializeField] private AnimationClip burnOven;
 
     [SerializeField] private AudioClip cookingSound;
     [SerializeField] private AudioClip doneSound;
@@ -50,7 +48,7 @@ public class OvenAnim : MonoBehaviour
         if (burned)
         {
             anim.Rebind();
-            anim.Play(burnOven.name);
+            anim.SetBool("Burning", true);
         }
         else
         {

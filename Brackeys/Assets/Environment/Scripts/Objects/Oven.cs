@@ -62,10 +62,17 @@ public class Oven : MonoBehaviour, IInteractable
                 HoldableFood holdable = foodObj.GetComponent<HoldableFood>();
                 if (holdable.FoodCondition == 2 && onOvenPrepared)
                 {
-                    holdable.SetFood(atualCookie);
                     holdable.FoodCondition = foodCondition;
-
-                    playerScript.HoldObject(foodObj, atualTaste);
+                    if (foodCondition == 4)
+                    {
+                        holdable.SetFood(cookies.foods[1]);
+                        playerScript.HoldObject(foodObj);
+                    }
+                    else 
+                    {
+                        holdable.SetFood(atualCookie);
+                        playerScript.HoldObject(foodObj, atualTaste);
+                    }
 
                     if (ovenAnim != null)
                     {

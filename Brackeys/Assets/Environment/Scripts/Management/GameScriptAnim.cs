@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering.Universal;
 
 public class GameScriptAnim : MonoBehaviour
 {
     [SerializeField] private GameManagement gameManagement;
-    [SerializeField] private GameObject lights;
+    [SerializeField] private Light2D lights;
     private AudioSource source;
 
     [SerializeField] AudioClip storm;
@@ -45,7 +46,6 @@ public class GameScriptAnim : MonoBehaviour
                 {
                     flashingTimes = 2;
                     StartCoroutine("FlashingLight");
-                    lights.SetActive(false);
                     ovenLight.SetActive(true);
 
                     Stage = 2;
@@ -54,7 +54,6 @@ public class GameScriptAnim : MonoBehaviour
             case 2:
                 if (oven.onOven)
                 {
-                    Debug.Log("Oven is on");
                     flashingTimes = 5;
                     StartCoroutine("FlashingLight");
                     candlesDetectors[0].UnlitCandles();
@@ -83,20 +82,20 @@ public class GameScriptAnim : MonoBehaviour
         source.clip = storm;
         source.loop = true;
         source.Play();
-        lights.SetActive(false);
+        lights.intensity = 0;
     }
     private IEnumerator FlashingLight()
     {
         while (flashingTimes >= 0)
         {
             flashingTimes--;
-            if (lights.activeSelf)
+            if (lights.intensity < 1)
             {
-                lights.SetActive(false);
+                lights.intensity = 1;
             }
             else
             {
-                lights.SetActive(true);
+                lights.intensity = 0;
             }
             yield return new WaitForSeconds(0.5f);
         }

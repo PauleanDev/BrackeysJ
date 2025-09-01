@@ -783,6 +783,7 @@ Transform:
   m_Children:
   - {fileID: 1547818239}
   - {fileID: 1454611352}
+  - {fileID: 777080996}
   - {fileID: 542395846}
   - {fileID: 1874039317}
   - {fileID: 1538751350}
@@ -2294,7 +2295,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 777080996}
   - {fileID: 1595033395}
   - {fileID: 1700738262}
   - {fileID: 369799773}
@@ -5183,7 +5183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameScriptAnim
   gameManagement: {fileID: 718979484}
-  lights: {fileID: 1536257668}
+  lights: {fileID: 1536257670}
   storm: {fileID: 8300000, guid: a16246e2393706149a57cf09e6d4d348, type: 3}
   mixTable: {fileID: 542395850}
   oven: {fileID: 1874039322}
@@ -5644,15 +5644,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 542395846}
+    m_TransformParent: {fileID: 194024478}
     m_Modifications:
     - target: {fileID: 1764281569422575093, guid: dad1c6db49dbcfb4399a494d5983c376, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.43
+      value: -9.07
       objectReference: {fileID: 0}
     - target: {fileID: 1764281569422575093, guid: dad1c6db49dbcfb4399a494d5983c376, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: -1.3199999
       objectReference: {fileID: 0}
     - target: {fileID: 1764281569422575093, guid: dad1c6db49dbcfb4399a494d5983c376, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6791,9 +6791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 880107154}
-  - component: {fileID: 880107156}
   - component: {fileID: 880107155}
-  - component: {fileID: 880107157}
   m_Layer: 0
   m_Name: Candles Lit2
   m_TagString: Untagged
@@ -6810,7 +6808,7 @@ Transform:
   m_GameObject: {fileID: 880107153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.62, y: -2.08, z: 0}
+  m_LocalPosition: {x: -9.24, y: -3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6830,80 +6828,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetCandles
   candles:
   - {fileID: 777080997}
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  collisionRadious: 2
   dropedCandle: {fileID: 177357006}
---- !u!61 &880107156
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880107153}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.9600029, y: -0.4760672}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 7.1752777, y: 1.3916132}
-  m_EdgeRadius: 0
---- !u!50 &880107157
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880107153}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &909939203
 GameObject:
   m_ObjectHideFlags: 0
@@ -8335,7 +8264,7 @@ MonoBehaviour:
       Offset: {x: 0, y: 0}
   CenterOnActivate: 0
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 2, y: 2, z: 1}
+  Damping: {x: 2, y: 2, z: 0}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -14424,8 +14353,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957306123}
-  - component: {fileID: 1957306125}
-  - component: {fileID: 1957306126}
   - component: {fileID: 1957306124}
   m_Layer: 0
   m_Name: Candles Lit
@@ -14443,7 +14370,7 @@ Transform:
   m_GameObject: {fileID: 1957306122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.62, y: -5.74, z: 0}
+  m_LocalPosition: {x: -6.2, y: -5.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14465,80 +14392,11 @@ MonoBehaviour:
   - {fileID: 609579450}
   - {fileID: 1246500578}
   - {fileID: 809168868}
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  collisionRadious: 1
   dropedCandle: {fileID: 0}
---- !u!61 &1957306125
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957306122}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.9600029, y: -0.12647629}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 7.1752777, y: 2.2406197}
-  m_EdgeRadius: 0
---- !u!50 &1957306126
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957306122}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &1966930336
 GameObject:
   m_ObjectHideFlags: 0
@@ -14589,6 +14447,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetCandles
   candles: []
+  player:
+    serializedVersion: 2
+    m_Bits: 0
+  collisionRadious: 0
   dropedCandle: {fileID: 0}
 --- !u!1 &1996508592
 GameObject:
