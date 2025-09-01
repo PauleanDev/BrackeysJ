@@ -9,8 +9,12 @@ public class Client : MonoBehaviour
     private Vector2 ExitPosition;
     private bool rightDir = true;
 
+
+
+
     private void Awake()
     {
+        GameManagement.GameFinished += OnGameFinished;
         agent = GetComponent<NavMeshAgent>();
         ExitPosition = transform.position;
     }
@@ -48,7 +52,16 @@ public class Client : MonoBehaviour
         {
             yield return null;
         }
+        Destroy(gameObject);
+    }
 
-        Destroy(this.gameObject);
+    private void OnGameFinished()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameManagement.GameFinished -= OnGameFinished;
     }
 }

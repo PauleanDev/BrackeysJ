@@ -47,6 +47,11 @@ public class GameManagement : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        ClientInteraction.Avaliated -= OnAvaliated;
+    }
+
     private void OnAvaliated(int rating)
     {
         score += reviewsScore[rating];
@@ -55,6 +60,7 @@ public class GameManagement : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
+        GameFinished();
         SceneLoader.Instance.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 

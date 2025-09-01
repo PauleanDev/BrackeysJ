@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UIManagement : MonoBehaviour
 {
-    [Header("Managers")]
 
     [Header("GameUI")]
     [SerializeField] private GameObject startGamePanel;
@@ -42,6 +41,7 @@ public class UIManagement : MonoBehaviour
     [SerializeField] private Sprite starPerfect;
 
 
+
     private void Awake()
     {
         ClientInteraction.Called += OnCalled;
@@ -52,17 +52,45 @@ public class UIManagement : MonoBehaviour
         Invoke("AfterGameStart", GameManagement.startGame);
     }
 
+    private void OnDestroy()
+    {
+        ClientInteraction.Called -= OnCalled;
+        GameManagement.GameFinished -= OnGameFinished;
+    }
+
     private void OnCalled(ClientInteraction client)
     {
         dialoguePanel.SetActive(!client.waiting);
 
-        if (client != atualClient)
+        if (atualClient != null)
         {
-            StartDialogue(false);
+            if (client != atualClient)
+            {
+                for (int i = 0 ; i < canSelect.Length; i++)
+                {
+                    canSelect[i] = true;
+                }
+
+                StartDialogue(false);
+                atualClient = client;
+            }
+            else
+            {
+                StartDialogue(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < canSelect.Length; i++)
+            {
+                canSelect[i] = true;
+            }
 
             atualClient = client;
+            StartDialogue(false);
         }
     }
+
 
     private void AfterGameStart()
     {
@@ -197,11 +225,6 @@ public class UIManagement : MonoBehaviour
         currentOption = 0;
     }
 
-    public void AtualClientInteract()
-    {
-        atualClient.Interact();
-    }
-
     public void StartDialogue(bool reset)
     {
         if (reset)
@@ -209,24 +232,24 @@ public class UIManagement : MonoBehaviour
             currentOption = 0;
             playerLayout.SetActive(true);
             clientLayout.SetActive(false);
-
-            for (int i = 0; i < canSelect.Length; i++)
-            {
-                dialogButtons[i].interactable = canSelect[i];
-            }
         }
-        else
+
+        for (int i = 0; i < canSelect.Length; i++)
         {
-            for (int i = 0; i < canSelect.Length; i++)
-            {
-                canSelect[i] = true;
-                dialogButtons[i].interactable = canSelect[i];
-            }
+            dialogButtons[i].interactable = canSelect[i];
         }
 
         for (int i = 0; i < buttonsText.Length; i++)
         {
             buttonsText[i].text = dialogueBank.questions[i].question;
+        }
+    }
+
+    public void StopDialogue()
+    {
+        if (atualClient != null)
+        {
+            atualClient.Interact();
         }
     }
 

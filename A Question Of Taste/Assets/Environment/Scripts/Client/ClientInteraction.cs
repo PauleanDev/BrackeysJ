@@ -1,8 +1,7 @@
-using NUnit.Framework;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class ClientInteraction : MonoBehaviour, IInteractable
 {
@@ -16,10 +15,10 @@ public class ClientInteraction : MonoBehaviour, IInteractable
     public bool waiting { get; private set; } = true;
     public AudioClip clientVoice { get; private set; }
     private int male;
-    
-    public delegate void CalledHandler (ClientInteraction client);
+
+    public delegate void CalledHandler(ClientInteraction client);
     public static event CalledHandler Called;
-    
+
     public delegate void AvaliatedHandler (int rating);
     public static event AvaliatedHandler Avaliated;
 
@@ -27,11 +26,11 @@ public class ClientInteraction : MonoBehaviour, IInteractable
     private void OnEnable()
     {
         clientMove = GetComponent<Client>();
-        male = Random.Range(0, 1);
-        clientName = dialogueBank.clientData.genreInfo[male].clientName[Random.Range(0, dialogueBank.clientData.genreInfo[male].clientName.Length - 1)] ;
-        dialogueLevel = Random.Range(0, dialogueBank.clientData.dialogueChances.Length - 1);
+        male = UnityEngine.Random.Range(0, 1);
+        clientName = dialogueBank.clientData.genreInfo[male].clientName[UnityEngine.Random.Range(0, dialogueBank.clientData.genreInfo[male].clientName.Length - 1)] ;
+        dialogueLevel = UnityEngine.Random.Range(0, dialogueBank.clientData.dialogueChances.Length - 1);
 
-        tasteCode = Random.Range(0, 3);
+        tasteCode = UnityEngine.Random.Range(0, 3);
 
 
         switch (tasteCode)
@@ -61,7 +60,7 @@ public class ClientInteraction : MonoBehaviour, IInteractable
             chance.Add(false);
         }
 
-        bool positiveAnsware = chance[Random.Range(0, chance.Count)];
+        bool positiveAnsware = chance[UnityEngine.Random.Range(0, chance.Count)];
 
         return positiveAnsware;
     }
@@ -103,14 +102,13 @@ public class ClientInteraction : MonoBehaviour, IInteractable
         else
         {
             waiting = !waiting;
+
             Called(this);
         }
     }
 
     public string Question(Tastes taste, int questionId)
     {
-        Debug.Log(clientTaste.sweetness + " " + clientTaste.spicy + " " + clientTaste.salty);
-
         if (PositiveAnswer())
         {
             bool tasteQuestion = dialogueBank.questionAnswers[questionId].tasteQ || dialogueBank.questionAnswers[questionId].ingredienQ;
@@ -119,21 +117,21 @@ public class ClientInteraction : MonoBehaviour, IInteractable
             {
                 if (taste.sweetness == clientTaste.sweetness || taste.spicy == clientTaste.spicy || taste.salty == clientTaste.salty)
                 {
-                    return dialogueBank.questionAnswers[questionId].tasteAnswers.answer[Random.Range(0, dialogueBank.questionAnswers[questionId].tasteAnswers.answer.Length - 1)];
+                    return dialogueBank.questionAnswers[questionId].tasteAnswers.answer[UnityEngine.Random.Range(0, dialogueBank.questionAnswers[questionId].tasteAnswers.answer.Length - 1)];
                 }
                 else
                 {
-                    return dialogueBank.questionAnswers[questionId].tasteAnswers.wrongTasteAnswers[Random.Range(0, dialogueBank.questionAnswers[questionId].tasteAnswers.wrongTasteAnswers.Length - 1)];
+                    return dialogueBank.questionAnswers[questionId].tasteAnswers.wrongTasteAnswers[UnityEngine.Random.Range(0, dialogueBank.questionAnswers[questionId].tasteAnswers.wrongTasteAnswers.Length - 1)];
                 }
             }
             else
             {
-                return dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares[Random.Range(0, dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares.Length - 1)];
+                return dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares[UnityEngine.Random.Range(0, dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares.Length - 1)];
             }
         }
         else
         {
-            return dialogueBank.generalNegativeAnswares[Random.Range(0, dialogueBank.generalNegativeAnswares.Length - 1)];
+            return dialogueBank.generalNegativeAnswares[UnityEngine.Random.Range(0, dialogueBank.generalNegativeAnswares.Length - 1)];
         }
     }
 }

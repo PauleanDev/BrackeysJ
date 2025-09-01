@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ClientSpawn : MonoBehaviour
 {
+    [SerializeField] private EventsManager eventManager;
     [SerializeField] private float spawnTime;
     private float atualSpawnTime;
 
@@ -14,6 +15,11 @@ public class ClientSpawn : MonoBehaviour
     private void Awake()
     {
         ClientInteraction.Avaliated += OnAvaliated;
+    }
+
+    private void OnDestroy()
+    {
+        ClientInteraction.Avaliated -= OnAvaliated;
     }
 
     private void Start()

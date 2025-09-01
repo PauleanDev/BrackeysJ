@@ -32,14 +32,12 @@ public class SceneLoader : MonoBehaviour
     {
 
         loadingCanvas.gameObject.SetActive(true);
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         while (operation.isDone == false)
         {
             yield return null;
         }
-
-        //loadingCanvas.worldCamera = Camera.main;
+        loadingCanvas.worldCamera = Camera.main;
         loadingCanvas.gameObject.SetActive(false);
     }
 

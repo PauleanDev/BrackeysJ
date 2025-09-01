@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
         Flip();
     }
 
+    private void OnDestroy()
+    {
+        GameManagement.GameFinished -= OnGameFinished;
+        ClientInteraction.Called -= OnCalled;
+    }
+
     //Events
     private void OnCalled(ClientInteraction client)
     {
