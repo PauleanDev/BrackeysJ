@@ -12,6 +12,7 @@ public class ClientInteraction : MonoBehaviour, IInteractable
     public string clientName { get; private set; }
     public int dialogueLevel { get; private set; }
     public Tastes clientTaste { get; private set; } = new Tastes();
+    private int tasteCode;
     public bool waiting { get; private set; } = true;
     public AudioClip clientVoice { get; private set; }
     private int male;
@@ -30,7 +31,8 @@ public class ClientInteraction : MonoBehaviour, IInteractable
         clientName = dialogueBank.clientData.genreInfo[male].clientName[Random.Range(0, dialogueBank.clientData.genreInfo[male].clientName.Length - 1)] ;
         dialogueLevel = Random.Range(0, dialogueBank.clientData.dialogueChances.Length - 1);
 
-        int tasteCode = Random.Range(0, 3);
+        tasteCode = Random.Range(0, 3);
+
 
         switch (tasteCode)
         {
@@ -126,7 +128,7 @@ public class ClientInteraction : MonoBehaviour, IInteractable
             }
             else
             {
-                return dialogueBank.questionAnswers[questionId].answer[Random.Range(0, dialogueBank.questionAnswers[questionId].answer.Length-1)];
+                return dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares[Random.Range(0, dialogueBank.questionAnswers[questionId].foodAnswares[tasteCode].positiveAnswares.Length - 1)];
             }
         }
         else

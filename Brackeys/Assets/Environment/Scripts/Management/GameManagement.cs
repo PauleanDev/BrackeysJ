@@ -16,6 +16,7 @@ public class GameManagement : MonoBehaviour
 
     private int score = 0;
     private bool paused = false;
+    private bool canPause = true;
 
     public delegate void GameFinishedHandler();
     public static event GameFinishedHandler GameFinished;
@@ -40,7 +41,7 @@ public class GameManagement : MonoBehaviour
             FinishLevel();
         }
 
-        if (pause.triggered)
+        if (pause.triggered && canPause)
         {
             PauseGame(paused);
         }
@@ -53,16 +54,20 @@ public class GameManagement : MonoBehaviour
     }
     public void RestartGame()
     {
+        Time.timeScale = 1;
         SceneLoader.Instance.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     public void BackToMenu()
     {
+        Time.timeScale = 1;
         SceneLoader.Instance.LoadSceneAsync("Menu");
     }
 
     public void FinishLevel()
     {
+        canPause = false;
+        Time.timeScale = 1;
         PlayerPrefs.SetInt("LastScore", score);
         GameFinished();
     }

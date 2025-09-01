@@ -72,16 +72,20 @@ public class UIManagement : MonoBehaviour
 
     private void OnGameFinished()
     {
+        gameUIPanel.SetActive(false);
+        dialoguePanel.SetActive(false);
+        gameEndPanel.SetActive(true);
+
         int pontuation = PlayerPrefs.GetInt("LastScore");
 
-        if (pontuation < starsPontuation[0])
+        if (pontuation <= starsPontuation[0])
         {
             for (int i = 0; i < stars.Length; i++)
             {
                 stars[i].sprite = starEmpty;
             }
         }
-        else if (pontuation >= starsPontuation[0] && pontuation < starsPontuation[1])
+        else if (pontuation > starsPontuation[0] && pontuation <= starsPontuation[1])
         {
             for (int i = 0; i < stars.Length - 1; i++)
             {
@@ -92,7 +96,7 @@ public class UIManagement : MonoBehaviour
                 stars[i].sprite = starPerfect;
             }
         }
-        else if (pontuation >= starsPontuation[1] && pontuation < starsPontuation[2])
+        else if (pontuation > starsPontuation[1] && pontuation < starsPontuation[2])
         {
             for (int i = 0; i < stars.Length - 2; i++)
             {
@@ -105,16 +109,11 @@ public class UIManagement : MonoBehaviour
         }
         else if (pontuation >= starsPontuation[2])
         {
-            for (int i = stars.Length; i < stars.Length; i++)
+            for (int i = 0; i < stars.Length; i++)
             {
                 stars[i].sprite = starPerfect;
             }
         }
-
-            gameUIPanel.SetActive(false);
-        dialoguePanel.SetActive(false);
-
-        gameEndPanel.SetActive(true);
     }
 
     public void TimerUpdate(float time)
@@ -221,6 +220,7 @@ public class UIManagement : MonoBehaviour
             for (int i = 0; i < canSelect.Length; i++)
             {
                 canSelect[i] = true;
+                dialogButtons[i].interactable = canSelect[i];
             }
         }
 

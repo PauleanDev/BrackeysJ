@@ -97,11 +97,16 @@ public class GameScriptAnim : MonoBehaviour
             {
                 lights.intensity = 0;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
         }
     }
 
     private void OnAvaliated(int rating)
+    {
+        Invoke("ForceFinishLevel", 1f);
+    }
+
+    private void ForceFinishLevel()
     {
         gameManagement.FinishLevel();
     }

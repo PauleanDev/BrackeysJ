@@ -77,20 +77,26 @@ MonoBehaviour:
     - food: {fileID: 11400000, guid: 9d943abb6305c7042bf0a4078f65680a, type: 2}
     - food: {fileID: 11400000, guid: 5cd601bf115e5584bba0a000792444e3, type: 2}
   questionAnswers:
-  - answer:
-    - "I love chocolate cake ! Well, I love all cakes\u2026"
-    - bangas
-    - asas
-    - sfaga
-    - agdaw
-    tasteQ: 0
+  - tasteQ: 0
     ingredienQ: 0
+    foodAnswares:
+    - positiveAnswares:
+      - "I love chocolate cake ! Well, I love all cakes\u2026 "
+      - 'Desserts ! '
+      - 'Is it weird that my favorite food is a mango? '
+    - positiveAnswares:
+      - "I\u2019ve recently been addicted to Indian food. It\u2019s so spicy, but
+        I love it ! "
+      - I like tacos !
+    - positiveAnswares:
+      - 'Everything that is salty. From salty crackers to a good old steak, whatever. '
+      - I love fried things.
     tasteAnswers:
       answer: []
       wrongTasteAnswers: []
-  - answer: []
-    tasteQ: 1
+  - tasteQ: 1
     ingredienQ: 0
+    foodAnswares: []
     tasteAnswers:
       answer:
       - Yes, i do.
@@ -100,9 +106,9 @@ MonoBehaviour:
       - I don't like to much, remember me hard days.
       - I have problems with that
       - no.
-  - answer: []
-    tasteQ: 0
+  - tasteQ: 0
     ingredienQ: 1
+    foodAnswares: []
     tasteAnswers:
       answer:
       - Oh yeah, I wanna try !

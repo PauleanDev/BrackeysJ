@@ -49,6 +49,6 @@ public class Client : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }

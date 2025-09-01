@@ -36,10 +36,10 @@ public class ClientAnimations
 [Serializable]
 public class Answers
 {
-    public string[] answer;
     public bool tasteQ;
     public bool ingredienQ;
 
+    public FoodAnswares[] foodAnswares;
     public TasteAnswares tasteAnswers;
 }
 
@@ -69,16 +69,16 @@ public class TasteQuestions
 }
 
 [Serializable]
+public class FoodAnswares
+{
+    public string[] positiveAnswares;
+}
+
+[Serializable]
 public class TasteAnswares
 {
     public string[] answer;
     public string[] wrongTasteAnswers;
-}
-
-[Serializable]
-public class NegativeAnswares
-{
-    public string[] answer;
 }
 
 [Serializable]

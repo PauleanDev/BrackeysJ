@@ -13754,10 +13754,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 194024478}
     m_Modifications:
     - target: {fileID: 5999701128841712713, guid: d3470c6414b75984b97d02f9f4549eb5, type: 3}
-      propertyPath: burnTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5999701128841712713, guid: d3470c6414b75984b97d02f9f4549eb5, type: 3}
       propertyPath: cookieParent
       value: 
       objectReference: {fileID: 964836898}
