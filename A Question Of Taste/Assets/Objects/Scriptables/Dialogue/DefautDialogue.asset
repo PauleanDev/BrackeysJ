@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5c5e026d55c04ebca035401565dd9, type: 3}
+  m_Name: DefautDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBank
+  clientData:
+    clientInfo:
+    - clientName: April
+      isMale: 0
+      clientAudios: []
+    - clientName: Coraline
+      isMale: 0
+      clientAudios: []
+    - clientName: Ashley
+      isMale: 0
+      clientAudios: []
+    - clientName: Emilia
+      isMale: 0
+      clientAudios: []
+    - clientName: Kiki
+      isMale: 0
+      clientAudios: []
+    - clientName: Gabriel
+      isMale: 1
+      clientAudios: []
+    - clientName: Endrick
+      isMale: 1
+      clientAudios: []
+    - clientName: Micheal
+      isMale: 1
+      clientAudios: []
+    - clientName: Mohamed
+      isMale: 1
+      clientAudios: []
+    - clientName: Paul
+      isMale: 1
+      clientAudios: []
+    skinAnimators:
+    - {fileID: 9100000, guid: 9b44d0acd87fb6c479ad52475752e9cf, type: 2}
+    - {fileID: 9100000, guid: 238fe5c76f5618b469e3f7a4416461f7, type: 2}
+    - {fileID: 9100000, guid: 96cf34e340b5c4d4a9ac6160a0dfa778, type: 2}
+    - {fileID: 9100000, guid: 409eed90ea61ea64c82638322c8f2ecb, type: 2}
+    skinIcons:
+    - {fileID: -7336171851792307535, guid: b3efbd4ed3c6e1f41b1089b5f266dd8d, type: 3}
+    - {fileID: -847645289316235813, guid: 3488efe0161ae204c871612c690c8d94, type: 3}
+    - {fileID: -8484004108675066486, guid: 756226811f6701c4aa3ff24852503e23, type: 3}
+    - {fileID: -7920285149912438266, guid: 3c82f2d8947631a47b9f47fe34ebbf59, type: 3}
+    genreHairComponents:
+    - bodyComponents:
+      - sprites:
+        - {fileID: 1238033471404927442, guid: 6704e25c67f8c444b86d0e0a81d6c758, type: 3}
+        - {fileID: 2111925476215580209, guid: 6704e25c67f8c444b86d0e0a81d6c758, type: 3}
+        - {fileID: 2273548637870878977, guid: 6704e25c67f8c444b86d0e0a81d6c758, type: 3}
+        - {fileID: -5715014661478608968, guid: 6704e25c67f8c444b86d0e0a81d6c758, type: 3}
+        - {fileID: 7328328807779345537, guid: 6704e25c67f8c444b86d0e0a81d6c758, type: 3}
+      - sprites:
+        - {fileID: 2620617080315020802, guid: 6f4ea3c9538b0ce439771ac557f6c259, type: 3}
+        - {fileID: -625106229197191227, guid: 6f4ea3c9538b0ce439771ac557f6c259, type: 3}
+        - {fileID: 7418489940992059322, guid: 6f4ea3c9538b0ce439771ac557f6c259, type: 3}
+        - {fileID: -4433319158601751288, guid: 6f4ea3c9538b0ce439771ac557f6c259, type: 3}
+        - {fileID: 8552195777517696839, guid: 6f4ea3c9538b0ce439771ac557f6c259, type: 3}
+      - sprites:
+        - {fileID: -5093677858217804530, guid: a75f3a32191450449adc049ce0f22a1f, type: 3}
+        - {fileID: 3556505613329339341, guid: a75f3a32191450449adc049ce0f22a1f, type: 3}
+        - {fileID: -5270216787005354155, guid: a75f3a32191450449adc049ce0f22a1f, type: 3}
+        - {fileID: -400386509618816638, guid: a75f3a32191450449adc049ce0f22a1f, type: 3}
+        - {fileID: 1097938244420870684, guid: a75f3a32191450449adc049ce0f22a1f, type: 3}
+      - sprites:
+        - {fileID: 1471279403016328568, guid: 1d728c39b412be741a683b187e3afe7b, type: 3}
+        - {fileID: 3833746419632075231, guid: 1d728c39b412be741a683b187e3afe7b, type: 3}
+        - {fileID: -908174393391939112, guid: 1d728c39b412be741a683b187e3afe7b, type: 3}
+        - {fileID: 4827786780764224015, guid: 1d728c39b412be741a683b187e3afe7b, type: 3}
+        - {fileID: -7689389904317585770, guid: 1d728c39b412be741a683b187e3afe7b, type: 3}
+      - sprites:
+        - {fileID: -1478614849903468929, guid: d28b5429c981dd64d904ee9e06544a36, type: 3}
+        - {fileID: 5243896224618470984, guid: d28b5429c981dd64d904ee9e06544a36, type: 3}
+        - {fileID: 6194316557859195828, guid: d28b5429c981dd64d904ee9e06544a36, type: 3}
+        - {fileID: -280882321453554518, guid: d28b5429c981dd64d904ee9e06544a36, type: 3}
+        - {fileID: 166090760135517670, guid: d28b5429c981dd64d904ee9e06544a36, type: 3}
+    - bodyComponents:
+      - sprites:
+        - {fileID: 4219893097909488687, guid: b1031bcd61a829a4682892a8c6cda155, type: 3}
+        - {fileID: -2493478695946638569, guid: b1031bcd61a829a4682892a8c6cda155, type: 3}
+        - {fileID: -487936111012795330, guid: b1031bcd61a829a4682892a8c6cda155, type: 3}
+        - {fileID: 5670003470721091422, guid: b1031bcd61a829a4682892a8c6cda155, type: 3}
+        - {fileID: -9108815234108918398, guid: b1031bcd61a829a4682892a8c6cda155, type: 3}
+      - sprites:
+        - {fileID: 7122226203278781286, guid: 40b5314b280d74d429efddffe8fb4074, type: 3}
+        - {fileID: 8406975869676533041, guid: 40b5314b280d74d429efddffe8fb4074, type: 3}
+        - {fileID: 2841262829197514569, guid: 40b5314b280d74d429efddffe8fb4074, type: 3}
+        - {fileID: 3862694673258343008, guid: 40b5314b280d74d429efddffe8fb4074, type: 3}
+        - {fileID: 287296627925000519, guid: 40b5314b280d74d429efddffe8fb4074, type: 3}
+      - sprites:
+        - {fileID: 5931757401274311522, guid: e57265419bffc5044b3e4af09fd1839a, type: 3}
+        - {fileID: 5286908071645031265, guid: e57265419bffc5044b3e4af09fd1839a, type: 3}
+        - {fileID: -809535851162381101, guid: e57265419bffc5044b3e4af09fd1839a, type: 3}
+        - {fileID: 7917146398871919293, guid: e57265419bffc5044b3e4af09fd1839a, type: 3}
+        - {fileID: -7426672374996392447, guid: e57265419bffc5044b3e4af09fd1839a, type: 3}
+      - sprites:
+        - {fileID: -1486264654453536755, guid: 9f64bf95cda41954b898aa9dec524a48, type: 3}
+        - {fileID: 7487633611686466723, guid: 9f64bf95cda41954b898aa9dec524a48, type: 3}
+        - {fileID: 8092921201120999475, guid: 9f64bf95cda41954b898aa9dec524a48, type: 3}
+        - {fileID: -3857186728916639794, guid: 9f64bf95cda41954b898aa9dec524a48, type: 3}
+        - {fileID: -7781568033184164829, guid: 9f64bf95cda41954b898aa9dec524a48, type: 3}
+      - sprites:
+        - {fileID: 4107465981524449394, guid: 60901912e580d5545b9d9179bfa3636a, type: 3}
+        - {fileID: -8685689539299797013, guid: 60901912e580d5545b9d9179bfa3636a, type: 3}
+        - {fileID: -7790480662691248039, guid: 60901912e580d5545b9d9179bfa3636a, type: 3}
+        - {fileID: -6034204323291586837, guid: 60901912e580d5545b9d9179bfa3636a, type: 3}
+        - {fileID: -9052553888739800827, guid: 60901912e580d5545b9d9179bfa3636a, type: 3}
+    dialogueChances:
+    - positiveChance: 2
+      negativeChance: 8
+    - positiveChance: 5
+      negativeChance: 5
+    - positiveChance: 7
+      negativeChance: 3
+  questions:
+  - question: What's your favorite food?
+    subMenu: 0
+    tasteQ: 0
+    ingredientQ: 0
+    tasteQuestions: []
+    ingredientQuestions: []
+  - question: What do you think about...
+    subMenu: 1
+    tasteQ: 1
+    ingredientQ: 0
+    tasteQuestions:
+    - question: Sweetness
+      clientTaste: 1
+    - question: Spicy
+      clientTaste: 2
+    - question: Salty
+      clientTaste: 3
+    ingredientQuestions: []
+  - question: Have you ever Tried...
+    subMenu: 1
+    tasteQ: 0
+    ingredientQ: 1
+    tasteQuestions: []
+    ingredientQuestions:
+    - food: {fileID: 11400000, guid: f35846199ebff8b4597e491f8fb881d0, type: 2}
+    - food: {fileID: 11400000, guid: 9d943abb6305c7042bf0a4078f65680a, type: 2}
+    - food: {fileID: 11400000, guid: 5cd601bf115e5584bba0a000792444e3, type: 2}
+  questionAnswers:
+  - tasteQ: 0
+    ingredienQ: 0
+    foodAnswares:
+    - positiveAnswares:
+      - "I love chocolate cake ! Well, I love all cakes\u2026 "
+      - 'Desserts ! '
+      - 'Is it weird that my favorite food is a mango? '
+    - positiveAnswares:
+      - "I\u2019ve recently been addicted to Indian food. It\u2019s so spicy, but
+        I love it ! "
+      - I like tacos !
+    - positiveAnswares:
+      - 'Everything that is salty. From salty crackers to a good old steak, whatever. '
+      - I love fried things.
+    tasteAnswers:
+      answer: []
+      wrongTasteAnswers: []
+  - tasteQ: 1
+    ingredienQ: 0
+    foodAnswares: []
+    tasteAnswers:
+      answer:
+      - Yes, i do.
+      - I love it, like... to much !
+      - Is because that I am fat.
+      wrongTasteAnswers:
+      - I don't like to much, remember me hard days.
+      - I have problems with that
+      - no.
+  - tasteQ: 0
+    ingredienQ: 1
+    foodAnswares: []
+    tasteAnswers:
+      answer:
+      - Oh yeah, I wanna try !
+      - "Sure thing, I\u2019d love to try it."
+      - That sounds interesting !
+      - I love it !
+      - "Yeah sure ! Why not\u2026 "
+      wrongTasteAnswers:
+      - "Sorry, I don\u2019t like."
+      - "I don\u2019t like"
+      - "in a cookie\u2026 That sounds weird."
+      - "in a cookie\u2026 That sounds weird."
+      - "in a cookie\u2026"
+      - "What \u2026?"
+      - Meh ! I hate
+      - Meh ! I hate
+      - 'What !? '
+  generalNegativeAnswares:
+  - 'Why are you still yapping ? I passed my order years ago ! '
+  - "I don\u2019t know, just give my cookie."
+  - "Where is my cookie ?! I\u2019ve been waiting for ages ! "
+  - I just go response you after I see my cookie !

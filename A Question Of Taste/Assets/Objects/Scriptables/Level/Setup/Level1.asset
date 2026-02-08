@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005e19a4e3e98ed41ba36445e9183639, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: Assembly-CSharp::SLevelScript
+  levelObject:
+  - objPrefab: {fileID: 5075314416062019449, guid: c28ffd5899ea55d4ba3a5330d2a32483, type: 3}
+    objTransform: {x: -6.5, y: -2}
+  - objPrefab: {fileID: 1889414321355278382, guid: 18390e9f49ee65d41930f0ada06414e3, type: 3}
+    objTransform: {x: -9.5, y: -2}
+  isDarkLevel: 0
+  clientsSpawnPerTime: 1
+  gameTime: 180
+  reviewsScore: 9cfffffff6ffffff3200000096000000
+  starsScore: f6ffffff00000000c8000000f4010000
+  music: {fileID: 8300000, guid: 334c3572c3ef53b41822b4cf1d3ef79c, type: 3}

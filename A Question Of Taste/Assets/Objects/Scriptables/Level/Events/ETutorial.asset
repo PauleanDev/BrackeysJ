@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ded021e35438d546914f10193f67c66, type: 3}
+  m_Name: ETutorial
+  m_EditorClassIdentifier: Assembly-CSharp::SLevelEvent
+  level: 0
+  finishOnAvaliated: 1
+  pGetItMassages:
+  - It's raining but I need bake cookies
+  - Ok, we have the dough
+  - 'Now I need to put this tray back and package this cookie '
+  levelEvents:
+    firstOnAwake: 1
+    candleEventSetup:
+    - candlesPosition:
+      - {x: -0.17, y: -2.76}
+      - {x: -4.08, y: -6.19}
+      - {x: -6.91, y: -5.77}
+      - {x: -8.51, y: -5.09}
+      - {x: -10, y: -1.82}
+      - {x: -4.67, y: -2.68}
+    - candlesPosition:
+      - {x: -6.028, y: -1.773}
+    - candlesPosition:
+      - {x: -10.54259, y: -4.071912}
